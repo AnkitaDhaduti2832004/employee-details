@@ -30,6 +30,6 @@ public class departmentdetails {
 
         System.out.println("Department 2 Details:");
         System.out.println("Department ID: " + department2.getDepartmentId());
-        System.out.println("Department Name: " + department2.getDepartmentName());
+        System.out.println("Department Name: " + department2.getDepardepartmenttmentName());
     }
 }
