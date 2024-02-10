@@ -1,4 +1,4 @@
-class Department {
+public class department extends class employee{
     private int departmentId;
     private String departmentName;
 
