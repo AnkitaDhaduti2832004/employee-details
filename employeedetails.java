@@ -1,77 +1,45 @@
-import java.util.Scanner;
-
-class Department {
-    private int departmentId;
-    private String departmentName;
-
-    public Department(int id, String name) {
-        this.departmentId = id;
-        this.departmentName = name;
-    }
-
-    public int getDepartmentId() {
-        return departmentId;
-    }
-
-    public String getDepartmentName() {
-        return departmentName;
-    }
-}
+import java.util.*;
 
 class Employee {
     private String name;
-    private String dateOfJoining;
-    private Department department;
+    private Date dateOfJoining;
+    private int departmentId;
 
-    public Employee(String name, String dateOfJoining, Department department) {
+    public Employee(String name, Date dateOfJoining, int departmentId) {
         this.name = name;
         this.dateOfJoining = dateOfJoining;
-        this.department = department;
+        this.departmentId = departmentId;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getDateOfJoining() {
+    public Date getDateOfJoining() {
         return dateOfJoining;
     }
 
-    public Department getDepartment() {
-        return department;
+    public int getDepartmentId() {
+        return departmentId;
     }
 }
 
 public class employeedetails {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Creating employee objects
+        Employee emp1 = new Employee("John Doe", new Date(), 101);
+        Employee emp2 = new Employee("Jane Smith", new Date(), 102);
 
-  
-        System.out.print("Enter employee name: ");
-        String empName = scanner.nextLine();
+        // Displaying employee details
+        System.out.println("Employee 1 Details:");
+        System.out.println("Name: " + emp1.getName());
+        System.out.println("Date of Joining: " + emp1.getDateOfJoining());
+        System.out.println("Department ID: " + emp1.getDepartmentId());
+        System.out.println();
 
-        System.out.print("Enter date of joining: ");
-        String dateOfJoining = scanner.nextLine();
-
-        System.out.print("Enter department ID: ");
-        int deptId = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print("Enter department name: ");
-        String deptName = scanner.nextLine();
-
-        
-        Department department = new Department(deptId, deptName);
-
-        Employee employee = new Employee(empName, dateOfJoining, department);
-
-        
-        System.out.println("\nEmployee Details:");
-        System.out.println("Name: " + employee.getName());
-        System.out.println("Date of Joining: " + employee.getDateOfJoining());
-        System.out.println("Department ID: " + employee.getDepartment().getDepartmentId());
-        System.out.println("Department Name: " + employee.getDepartment().getDepartmentName());
-
-        scanner.close();
+        System.out.println("Employee 2 Details:");
+        System.out.println("Name: " + emp2.getName());
+        System.out.println("Date of Joining: " + emp2.getDateOfJoining());
+        System.out.println("Department ID: " + emp2.getDepartmentId());
     }
 }
